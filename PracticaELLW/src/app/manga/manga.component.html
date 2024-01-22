@@ -1,0 +1,16 @@
+
+<section id="book-details" *ngIf="mangaData">
+  <div id="book-logo">
+      <img [src]="'./assets/img/' + mangaData.foto" alt="logo">
+      <p>Autor: {{mangaData.autor}}</p>
+      <p>Número de Capítulos: {{mangaData.caps}}</p>
+  </div>
+
+  <div id="book-info">
+      <h2>{{mangaData.titol}}</h2>
+      <h5>Sinopsis:</h5>
+      <p>{{mangaData.genere.join(', ')}}</p>
+      <p id="sinopsis">{{mangaData.sinopsis}}</p>
+
+    </div>
+</section>
