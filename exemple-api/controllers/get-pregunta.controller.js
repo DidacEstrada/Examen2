@@ -1,4 +1,4 @@
-const { findPreguntaByCategoria, findAllPreguntes} = require('../models/preguntes.repository');
+const { findPreguntaByCategoria, findAllPreguntes, findPreguntaByText} = require('../models/preguntes.repository');
 async function getAllPreguntes(req, res){
     console.log(req.params);
     console.log(req.headers);
@@ -12,13 +12,23 @@ async function getAllPreguntes(req, res){
   async function getPreguntesByCategoria(req, res) {
     console.log(req.params);
     console.log(req.headers);
-    const preguntaCategoria= req.params.categoria.split(',');
-    const pregunta = await findPreguntaByCategoria(preguntaCategoria);
+    
+    const pregunta = await findPreguntaByCategoria(req.body.categoria);
     if (!pregunta || pregunta.length === 0) {
       return res.status(400).send('No existeix cap pregunta de aquesta categoria');
     }
     res.json(pregunta);
   }
   
+  async function getPreguntaByQualsevolText(req, res) {
+    
+  
+    // Modificar la búsqueda para que sea insensible a mayúsculas y minúsculas, y acepte espacios
+    const pregunta = await findPreguntaByText(req.body.preguntes);
+  
+  
+    res.json(pregunta);
+  }
   module.exports.getAllPreguntes = getAllPreguntes;
   module.exports.getPreguntesByCategoria = getPreguntesByCategoria;
+  module.exports.getPreguntaByQualsevolText = getPreguntaByQualsevolText;

@@ -31,7 +31,12 @@ const PreguntesMongooseSchema = new mongoose.Schema({
     function findAllPreguntes() {
         return PreguntesMongooseModel.find();
     }
+
+    async function findPreguntaByText(preguntes) {
+        return PreguntesMongooseModel.find({preguntes : { $regex: new RegExp(preguntes, 'i') }});
+      }
     
     module.exports.createPreguntes = createPreguntes;
     module.exports.findPreguntaByCategoria = findPreguntaByCategoria;
     module.exports.findAllPreguntes = findAllPreguntes;
+    module.exports.findPreguntaByText = findPreguntaByText;
