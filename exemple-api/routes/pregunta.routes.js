@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', registerPreguntes);
 router.get('/', getAllPreguntes);
-router.get('/categoria', getPreguntesByCategoria);
+router.post('/categoria', getPreguntesByCategoria);
 router.get('/pregunta', getPreguntaByQualsevolText);
 
 module.exports.preguntaRouter = router;

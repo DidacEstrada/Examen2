@@ -19,9 +19,19 @@ export class PreguntaService {
     }
   }
 
-  async getPreguntaDataByCategories(categories: string[]): Promise<any> {
+  async getPreguntaDataByCategories(categories: string): Promise<any> {
+
     try{
-        const response = await fetch(`${this.apiUrl}/${categories.join(',')}`);
+        const response = await fetch(`${this.apiUrl}/categoria`, {
+          method: "POST",
+          body: JSON.stringify({
+            categoria: [categories]
+          }),
+          headers: {
+            'Content-Type': 'application/json'
+
+          },
+        });
         const preguntaData = await response.json();
         return preguntaData;
     }catch(error){

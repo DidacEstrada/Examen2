@@ -10,8 +10,8 @@ async function getAllPreguntes(req, res){
   }
   
   async function getPreguntesByCategoria(req, res) {
-    console.log(req.params);
-    console.log(req.headers);
+    console.log(req.body);
+    
     
     const pregunta = await findPreguntaByCategoria(req.body.categoria);
     if (!pregunta || pregunta.length === 0) {

@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li *ngFor="let categories of categories">
+      <button (click)="cambiarCategoria($event, categories)">{{ categories }}</button>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="preguntes">
+
+
+  <div class="pregunta" *ngFor="let pregunta of preguntes">
+
+    <h3>{{ pregunta.preguntes }}</h3>
+    <p>{{ pregunta.resposta }}</p>
+
+
+  </div>
+
+</div>
