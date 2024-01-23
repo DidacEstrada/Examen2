@@ -1,4 +1,4 @@
-const { findMangaByTitol, findMangaByAutor, findMangaByGenere, findAllMangas, findMangaByTitolExacte} = require('../models/mangues.repository');
+const { findMangaByTitol, findMangaByAutor, findMangaByGenere, findAllMangas, findMangaByTitolExacte, findPreguntaByCategoria, findAllPreguntes} = require('../models/mangues.repository');
 
 async function getManga(req, res) {
   console.log(req.params);
@@ -69,3 +69,4 @@ module.exports.getMangasByAutor = getMangasByAutor;
 module.exports.getMangasByGenere = getMangasByGenere;
 module.exports.getAllMangas = getAllMangas;
 module.exports.getMangaByQualsevolTitol = getMangaByQualsevolTitol;
+

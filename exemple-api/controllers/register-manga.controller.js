@@ -1,4 +1,4 @@
-const {createManga, findMangaByTitol} = require('../models/mangues.repository');
+const {createManga, findMangaByTitolExacte} = require('../models/mangues.repository');
 
 async function registerManga(req, res) {
   console.log(req.body);
@@ -6,7 +6,7 @@ async function registerManga(req, res) {
  
   const titol = req.body.titol;
 
-  const foundManga = await findMangaByTitol(titol);
+  const foundManga = await findMangaByTitolExacte(titol);
   if (foundManga) {
     return res.status(400).send('Manga already exists');
   }

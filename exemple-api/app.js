@@ -1,6 +1,7 @@
 const { app } = require('./app/express'); 
 const { connect } = require('./connections/mongodb.connections');
 const {mangaRouter} = require('./routes/manga.routes');
+const {preguntaRouter} = require('./routes/pregunta.routes');
 const PORT = 3000;
 
 async function main() {
@@ -8,6 +9,7 @@ async function main() {
 
 
 app.use('/mangues', mangaRouter);
+app.use('/preguntes', preguntaRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

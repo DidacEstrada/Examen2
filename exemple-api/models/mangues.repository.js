@@ -70,3 +70,7 @@ module.exports.findMangaByTitol = findMangaByTitol;
 module.exports.findMangaByAutor = findMangaByAutor;
 module.exports.findMangaByGenere = findMangaByGenere;
 module.exports.findMangaByTitolExacte = findMangaByTitolExacte;
+
+
+
+
